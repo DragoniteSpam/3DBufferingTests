@@ -50,3 +50,13 @@ instance_create_depth(0, 0, 0, Player);
 
 vb_player = load_model("player.d3d");
 vb_tree = load_model("tree.d3d");
+
+#macro TREE_COUNT 10000
+tree_positions = array_create(TREE_COUNT);
+
+for (var i = 0; i < TREE_COUNT; i++) {
+    tree_positions[i] = { x: random_range(-500, 500), y: random_range(-500, 500), z: 0 };
+}
+
+frames = 0;
+fps_total = 0;
