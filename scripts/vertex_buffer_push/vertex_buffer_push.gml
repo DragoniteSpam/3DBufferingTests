@@ -15,3 +15,10 @@ function vertex_buffer_push(vbuff, source, position) {
         vertex_colour(vbuff, c & 0xffffff, (c >> 24) / 0xff);
     }
 }
+
+function vertex_buffer_push_dll(vbuff, source, position, addr) {
+    static dll_name = "Fast3DStuff.dll";
+    static dll_calltype = dll_cdecl;
+    static ref = external_define(dll_name, "vertex_buffer_combine", dll_calltype, ty_real, 7, ty_real, ty_real, ty_real, ty_real, ty_real, ty_real, ty_real);
+    return external_call(ref, real(buffer_get_address(vbuff)), real(buffer_get_address(source)), buffer_get_size(source), position.x, position.y, position.z, addr);
+}

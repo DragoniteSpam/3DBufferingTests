@@ -52,9 +52,7 @@ vb_player = load_model("player.d3d");
 vb_tree = load_model("tree.d3d");
 buffer_tree = buffer_create_from_vertex_buffer(vb_tree, buffer_fixed, 4);
 
-vb_combine = vertex_create_buffer();
-
-#macro TREE_COUNT 10000
+#macro TREE_COUNT 2000
 #macro RANGE 2000
 tree_positions = array_create(TREE_COUNT);
 
