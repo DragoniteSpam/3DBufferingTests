@@ -52,10 +52,11 @@ vb_player = load_model("player.d3d");
 vb_tree = load_model("tree.d3d");
 
 #macro TREE_COUNT 10000
+#macro RANGE 2000
 tree_positions = array_create(TREE_COUNT);
 
 for (var i = 0; i < TREE_COUNT; i++) {
-    tree_positions[i] = { x: random_range(-500, 500), y: random_range(-500, 500), z: 0 };
+    tree_positions[i] = { x: random_range(-RANGE, RANGE), y: random_range(-RANGE, RANGE), z: 0 };
 }
 
 frames = 0;

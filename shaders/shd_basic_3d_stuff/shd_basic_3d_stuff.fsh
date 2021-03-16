@@ -13,6 +13,8 @@ varying vec3 v_worldNormal;
 void main() {
     vec4 starting_color = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
     
+    if (starting_color.a < 0.1) discard;
+    
     vec4 lightAmbient = vec4(0.25, 0.25, 0.25, 1.);
     
     // Spot light stuff
