@@ -21,6 +21,6 @@ function vertex_buffer_push_dll(vbuff, source, position, addr) {
     static dll_calltype = dll_cdecl;
     static ref_setup = external_define(dll_name, "vertex_set_position", dll_calltype, ty_real, 3, ty_real, ty_real, ty_real);
     static ref = external_define(dll_name, "vertex_buffer_combine", dll_calltype, ty_real, 4, ty_string, ty_string, ty_real, ty_real);
-    external_call(ref_setup, position.x, position.y, position.z);
+    external_call(ref_setup, position.x, position.y, position.z + 32 * dsin(current_time / 16 + position.x + position.y));
     return external_call(ref, buffer_get_address(vbuff), buffer_get_address(source), buffer_get_size(source), addr);
 }
