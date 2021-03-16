@@ -4,6 +4,7 @@
     {"id":{"name":"vertex_add_point","path":"scripts/vertex_add_point/vertex_add_point.yy",},"order":0,},
     {"id":{"name":"load_obj","path":"scripts/load_obj/load_obj.yy",},"order":10,},
     {"id":{"name":"load_model","path":"scripts/load_model/load_model.yy",},"order":1,},
+    {"id":{"name":"vertex_buffer_push","path":"scripts/vertex_buffer_push/vertex_buffer_push.yy",},"order":12,},
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},"order":5,},
     {"id":{"name":"draw_sprite_billboard","path":"scripts/draw_sprite_billboard/draw_sprite_billboard.yy",},"order":8,},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},"order":1,},
