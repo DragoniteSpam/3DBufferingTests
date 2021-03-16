@@ -19,6 +19,8 @@ function vertex_buffer_push(vbuff, source, position) {
 function vertex_buffer_push_dll(vbuff, source, position, addr) {
     static dll_name = "Fast3DStuff.dll";
     static dll_calltype = dll_cdecl;
-    static ref = external_define(dll_name, "vertex_buffer_combine", dll_calltype, ty_real, 7, ty_real, ty_real, ty_real, ty_real, ty_real, ty_real, ty_real);
-    return external_call(ref, real(buffer_get_address(vbuff)), real(buffer_get_address(source)), buffer_get_size(source), position.x, position.y, position.z, addr);
+    static ref_setup = external_define(dll_name, "vertex_set_position", dll_calltype, ty_real, 3, ty_real, ty_real, ty_real);
+    static ref = external_define(dll_name, "vertex_buffer_combine", dll_calltype, ty_real, 4, ty_string, ty_string, ty_real, ty_real);
+    external_call(ref_setup, position.x, position.y, position.z);
+    return external_call(ref, buffer_get_address(vbuff), buffer_get_address(source), buffer_get_size(source), addr);
 }

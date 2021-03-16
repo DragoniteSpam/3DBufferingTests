@@ -38,16 +38,23 @@ matrix_set(matrix_world, matrix_build(Player.x, Player.y, Player.z, 0, 0, 0, 1, 
 vertex_submit(vb_player, pr_trianglelist, -1);
 matrix_set(matrix_world, matrix_build_identity());
 
-var vb_combine = buffer_create(1296 * TREE_COUNT, buffer_fixed, 4);
+var buffer_combine = buffer_create(1296 * TREE_COUNT, buffer_fixed, 1);
+buffer_fill(buffer_combine, 0, buffer_u32, 0, buffer_get_size(buffer_combine));
 //vertex_begin(vb_combine, vertex_format);
 var addr = 0;
 
 for (var i = 0; i < TREE_COUNT; i++) {
     var pos = tree_positions[i];
-    addr += vertex_buffer_push_dll(vb_combine, buffer_tree, pos, addr);
-    /*matrix_set(matrix_world, matrix_build(pos.x, pos.y, pos.z, 0, 0, 0, 1, 1, 1));
-    vertex_submit(vb_tree, pr_trianglelist, sprite_get_texture(spr_tree, 0));*/
+    vertex_buffer_push_dll(buffer_combine, buffer_tree, pos, addr);
+    addr += 36;
 }
+
+buffer_seek(buffer_combine, buffer_seek_start, 1296);
+
+var vb_combine = vertex_create_buffer_from_buffer(buffer_combine, vertex_format);
+vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
+show_debug_message(vertex_get_number(vb_combine));
+vertex_delete_buffer(vb_combine);
 
 //vertex_end(vb_combine);
 //vertex_freeze(vb_combine);
