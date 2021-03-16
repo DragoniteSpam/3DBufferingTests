@@ -46,14 +46,13 @@ var addr = 0;
 for (var i = 0; i < TREE_COUNT; i++) {
     var pos = tree_positions[i];
     vertex_buffer_push_dll(buffer_combine, buffer_tree, pos, addr);
-    addr += 36;
+    addr += 324;
 }
 
 buffer_seek(buffer_combine, buffer_seek_start, 1296);
 
 var vb_combine = vertex_create_buffer_from_buffer(buffer_combine, vertex_format);
 vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
-show_debug_message(vertex_get_number(vb_combine));
 vertex_delete_buffer(vb_combine);
 
 //vertex_end(vb_combine);
