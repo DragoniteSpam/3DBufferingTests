@@ -7,6 +7,7 @@
     {"id":{"name":"vertex_buffer_push","path":"scripts/vertex_buffer_push/vertex_buffer_push.yy",},"order":12,},
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},"order":5,},
     {"id":{"name":"draw_sprite_billboard","path":"scripts/draw_sprite_billboard/draw_sprite_billboard.yy",},"order":8,},
+    {"id":{"name":"falcon_begin","path":"scripts/falcon_begin/falcon_begin.yy",},"order":1,},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},"order":1,},
     {"id":{"name":"screen_to_world","path":"scripts/screen_to_world/screen_to_world.yy",},"order":3,},
     {"id":{"name":"shd_basic_3d_stuff","path":"shaders/shd_basic_3d_stuff/shd_basic_3d_stuff.yy",},"order":0,},
