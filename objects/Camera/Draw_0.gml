@@ -38,6 +38,7 @@ matrix_set(matrix_world, matrix_build(Player.x, Player.y, Player.z, 0, 0, 0, 1, 
 vertex_submit(vb_player, pr_trianglelist, -1);
 matrix_set(matrix_world, matrix_build_identity());
 
+buffer_fill(buffer_combine, buffer_get_size(buffer_combine) - 4, buffer_u32, 0, 4);
 buffer_seek(buffer_combine_data, buffer_seek_start, 0);
 
 #macro NORMAL true
@@ -73,7 +74,7 @@ if (ONCE) {
 }
 
 if (ONCE || INDIVIDUAL) {
-    var vb_combine = vertex_create_buffer_from_buffer_ext(buffer_combine, vertex_format, 0, buffer_get_size(buffer_combine) / 36);
+    var vb_combine = vertex_create_buffer_from_buffer(buffer_combine, vertex_format);
     vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
     vertex_delete_buffer(vb_combine);
 }
