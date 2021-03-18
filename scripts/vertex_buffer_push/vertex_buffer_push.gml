@@ -8,13 +8,6 @@ function vertex_buffer_push_dll(vbuff, source, position, addr) {
     return external_call(ref, buffer_get_address(vbuff), buffer_get_address(source), buffer_get_size(source), addr);
 }
 
-function vertex_buffer_push_cache(vbuff, position_buffer, source, position, addr) {
-    buffer_write(position_buffer, buffer_f32, position.x);
-    buffer_write(position_buffer, buffer_f32, position.y);
-    buffer_write(position_buffer, buffer_f32, position.z + 32 * dsin(current_time / 16 + position.x + position.y));
-    buffer_copy(source, 0, buffer_get_size(source), vbuff, addr);
-}
-
 function vertex_buffer_push_combine(vbuff, position_buffer) {
     static dll_name = "Fast3DStuff.dll";
     static dll_calltype = dll_cdecl;
