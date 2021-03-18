@@ -39,24 +39,17 @@ vertex_submit(vb_player, pr_trianglelist, -1);
 matrix_set(matrix_world, matrix_build_identity());
 
 #macro NORMAL true
-#macro individual:NORMAL false
 #macro once:NORMAL false
-
-#macro INDIVIDUAL false
-#macro individual:INDIVIDUAL true
 
 #macro ONCE false
 #macro once:ONCE true
 
 var addr = 0;
+var v = 0;
 for (var i = 0; i < TREE_COUNT; i++) {
     var pos = tree_positions[i];
     if (ONCE) {
-        falcon_add_vertex_buffer(buffer_tree, pos.x, pos.y, pos.z);
-    }
-    if (INDIVIDUAL) {
-        vertex_buffer_push_dll(buffer_combine, buffer_tree, pos, addr);
-        addr += 324;
+        v += falcon_add_vertex_buffer(buffer_tree, pos.x, pos.y, pos.z);
     }
     if (NORMAL) {
         matrix_set(matrix_world, matrix_build(pos.x, pos.y, pos.z, 0, 0, 0, 1, 1, 1));
@@ -66,13 +59,8 @@ for (var i = 0; i < TREE_COUNT; i++) {
 }
 
 if (ONCE) {
-    falcon_end();
-}
-
-if (INDIVIDUAL) {
-    var vb_combine = vertex_create_buffer_from_buffer(buffer_combine, vertex_format);
-    vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
-    vertex_delete_buffer(vb_combine);
+    v += falcon_end();
+    //show_debug_message(["vertices: ", v])
 }
 
 shader_reset();
