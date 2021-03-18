@@ -38,14 +38,15 @@ matrix_set(matrix_world, matrix_build(Player.x, Player.y, Player.z, 0, 0, 0, 1, 
 vertex_submit(vb_player, pr_trianglelist, -1);
 matrix_set(matrix_world, matrix_build_identity());
 
+buffer_seek(buffer_combine_data, buffer_seek_start, 0);
+
 var addr = 0;
 for (var i = 0; i < TREE_COUNT; i++) {
-    var pos = tree_positions[i];
-    vertex_buffer_push_dll(buffer_combine, buffer_tree, pos, addr);
+    vertex_buffer_push_cache(buffer_combine, buffer_combine_data, buffer_tree, tree_positions[i], addr);
     addr += 324;
 }
 
-buffer_seek(buffer_combine, buffer_seek_end, 0);
+vertex_buffer_push_combine(buffer_combine, buffer_combine_data);
 
 var vb_combine = vertex_create_buffer_from_buffer_ext(buffer_combine, vertex_format, 0, buffer_get_size(buffer_combine) / 36);
 vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));

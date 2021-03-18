@@ -53,6 +53,7 @@ vb_tree = load_model("tree.d3d");
 buffer_tree = buffer_create_from_vertex_buffer(vb_tree, buffer_fixed, 1);
 
 buffer_combine = buffer_create(1296 * TREE_COUNT, buffer_fixed, 1);
+buffer_combine_data = buffer_create(12 * TREE_COUNT, buffer_fixed, 1);
 
 #macro TREE_COUNT 10000
 #macro RANGE 2000
