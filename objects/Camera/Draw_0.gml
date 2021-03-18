@@ -44,6 +44,8 @@ matrix_set(matrix_world, matrix_build_identity());
 #macro ONCE false
 #macro once:ONCE true
 
+falcon_begin();
+
 var addr = 0;
 var v = 0;
 for (var i = 0; i < TREE_COUNT; i++) {
