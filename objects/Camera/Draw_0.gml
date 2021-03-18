@@ -40,17 +40,43 @@ matrix_set(matrix_world, matrix_build_identity());
 
 buffer_seek(buffer_combine_data, buffer_seek_start, 0);
 
+#macro NORMAL true
+#macro individual:NORMAL false
+#macro once:NORMAL false
+
+#macro INDIVIDUAL false
+#macro individual:INDIVIDUAL true
+
+#macro ONCE false
+#macro once:ONCE true
+
 var addr = 0;
 for (var i = 0; i < TREE_COUNT; i++) {
-    vertex_buffer_push_cache(buffer_combine, buffer_combine_data, buffer_tree, tree_positions[i], addr);
-    addr += 1296;
+    var pos = tree_positions[i];
+    if (ONCE) {
+        vertex_buffer_push_cache(buffer_combine, buffer_combine_data, buffer_tree, pos, addr);
+        addr += 1296;
+    }
+    if (INDIVIDUAL) {
+        vertex_buffer_push_dll(buffer_combine, buffer_tree, pos, addr);
+        addr += 324;
+    }
+    if (NORMAL) {
+        matrix_set(matrix_world, matrix_build(pos.x, pos.y, pos.z, 0, 0, 0, 1, 1, 1));
+        vertex_submit(vb_tree, pr_trianglelist, sprite_get_texture(spr_tree, 0));
+        matrix_set(matrix_world, matrix_build_identity());
+    }
 }
 
-vertex_buffer_push_combine(buffer_combine, buffer_combine_data);
+if (ONCE) {
+    vertex_buffer_push_combine(buffer_combine, buffer_combine_data);
+}
 
-var vb_combine = vertex_create_buffer_from_buffer_ext(buffer_combine, vertex_format, 0, buffer_get_size(buffer_combine) / 36);
-vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
-vertex_delete_buffer(vb_combine);
+if (ONCE || INDIVIDUAL) {
+    var vb_combine = vertex_create_buffer_from_buffer_ext(buffer_combine, vertex_format, 0, buffer_get_size(buffer_combine) / 36);
+    vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
+    vertex_delete_buffer(vb_combine);
+}
 
 shader_reset();
 matrix_set(matrix_world, matrix_build_identity());
