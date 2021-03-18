@@ -43,7 +43,7 @@ buffer_seek(buffer_combine_data, buffer_seek_start, 0);
 var addr = 0;
 for (var i = 0; i < TREE_COUNT; i++) {
     vertex_buffer_push_cache(buffer_combine, buffer_combine_data, buffer_tree, tree_positions[i], addr);
-    addr += 324;
+    addr += 1296;
 }
 
 vertex_buffer_push_combine(buffer_combine, buffer_combine_data);
