@@ -6,6 +6,7 @@
     {"id":{"name":"falcon_add_buffer","path":"scripts/falcon_add_buffer/falcon_add_buffer.yy",},"order":2,},
     {"id":{"name":"load_model","path":"scripts/load_model/load_model.yy",},"order":1,},
     {"id":{"name":"vertex_buffer_push","path":"scripts/vertex_buffer_push/vertex_buffer_push.yy",},"order":12,},
+    {"id":{"name":"falcon_end","path":"scripts/falcon_end/falcon_end.yy",},"order":3,},
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},"order":5,},
     {"id":{"name":"draw_sprite_billboard","path":"scripts/draw_sprite_billboard/draw_sprite_billboard.yy",},"order":8,},
     {"id":{"name":"falcon_begin","path":"scripts/falcon_begin/falcon_begin.yy",},"order":1,},

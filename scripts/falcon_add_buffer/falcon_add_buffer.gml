@@ -8,7 +8,7 @@ function falcon_add_vertex_buffer(source, x, y, z) {
     var size_source = buffer_get_size(source);
     
     if (tell_vert + size_source > size_vert || tell_data + 3 > size_data) {
-        // end - do this next
+        falcon_end();
         buffer_seek(vert, buffer_seek_start, 0);
         buffer_seek(data, buffer_seek_start, 0);
     }
