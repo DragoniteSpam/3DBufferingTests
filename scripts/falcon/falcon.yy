@@ -6,7 +6,7 @@
     "path": "folders/Falcon.yy",
   },
   "resourceVersion": "1.0",
-  "name": "falcon_init",
+  "name": "falcon",
   "tags": [],
   "resourceType": "GMScript",
 }
