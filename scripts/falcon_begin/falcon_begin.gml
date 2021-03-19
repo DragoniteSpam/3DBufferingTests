@@ -3,5 +3,4 @@ function falcon_begin() {
     var data = global.__falcon_combine_data;
     buffer_seek(vert, buffer_seek_start, 0);
     buffer_seek(data, buffer_seek_start, 0);
-    buffer_fill(vert, buffer_get_size(vert) - 4, buffer_u32, 0, 4);
 }
