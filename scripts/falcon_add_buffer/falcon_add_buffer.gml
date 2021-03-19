@@ -16,7 +16,7 @@ function falcon_add_buffer(source, x, y, z) {
     buffer_write(data, buffer_u32, size_source);
     buffer_write(data, buffer_f32, x);
     buffer_write(data, buffer_f32, y);
-    buffer_write(data, buffer_f32, z + 32 * dsin(current_time / 16 + x + y));
+    buffer_write(data, buffer_f32, z);
     buffer_copy(source, 0, size_source, vert, tell_vert);
     buffer_seek(vert, buffer_seek_relative, size_source);
 }

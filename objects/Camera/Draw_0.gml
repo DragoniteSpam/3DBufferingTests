@@ -48,11 +48,14 @@ falcon_begin();
 
 for (var i = 0; i < TREE_COUNT; i++) {
     var pos = tree_positions[i];
+    var x = pos.x;
+    var y = pos.y;
+    var z = pos.z + 32 * dsin(current_time / 16 + x + y);
     if (ONCE) {
-        falcon_add_buffer(buffer_tree, pos.x, pos.y, pos.z);
+        falcon_add_buffer(buffer_tree, x, y, z);
     }
     if (NORMAL) {
-        matrix_set(matrix_world, matrix_build(pos.x, pos.y, pos.z, 0, 0, 0, 1, 1, 1));
+        matrix_set(matrix_world, matrix_build(x, y, z, 0, 0, 0, 1, 1, 1));
         vertex_submit(vb_tree, pr_trianglelist, sprite_get_texture(spr_tree, 0));
         matrix_set(matrix_world, matrix_build_identity());
     }
