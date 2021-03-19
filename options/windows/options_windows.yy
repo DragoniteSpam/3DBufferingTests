@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "once": {"option_windows_use_x64":"true",},
+  },
   "option_windows_display_name": "Made in GameMaker Studio 2",
   "option_windows_executable_name": "${project_name}",
   "option_windows_version": "1.0.0.0",
