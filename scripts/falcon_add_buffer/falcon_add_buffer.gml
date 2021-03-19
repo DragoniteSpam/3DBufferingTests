@@ -1,4 +1,4 @@
-function falcon_add_vertex_buffer(source, x, y, z) {
+function falcon_add_buffer(source, x, y, z) {
     var vert = global.__falcon_combine_vertices;
     var data = global.__falcon_combine_data;
     var tell_vert = buffer_tell(vert);
@@ -13,6 +13,7 @@ function falcon_add_vertex_buffer(source, x, y, z) {
         tell_vert = 0;
     }
     
+    buffer_write(data, buffer_u32, size_source);
     buffer_write(data, buffer_f32, x);
     buffer_write(data, buffer_f32, y);
     buffer_write(data, buffer_f32, z + 32 * dsin(current_time / 16 + x + y));
