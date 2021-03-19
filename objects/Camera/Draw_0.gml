@@ -49,7 +49,7 @@ falcon_begin();
 for (var i = 0; i < TREE_COUNT; i++) {
     var pos = tree_positions[i];
     if (ONCE) {
-        falcon_add_vertex_buffer(buffer_tree, pos.x, pos.y, pos.z);
+        falcon_add_buffer(buffer_tree, pos.x, pos.y, pos.z);
     }
     if (NORMAL) {
         matrix_set(matrix_world, matrix_build(pos.x, pos.y, pos.z, 0, 0, 0, 1, 1, 1));
