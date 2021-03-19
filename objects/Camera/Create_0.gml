@@ -17,6 +17,9 @@ vertex_format_add_color();
 vertex_format = vertex_format_end();
 #endregion
 
+falcon_set_vertex_size(36);
+falcon_set_vertex_format(vertex_format);
+
 #region create the grid
 vbuffer = vertex_create_buffer();
 vertex_begin(vbuffer, vertex_format);

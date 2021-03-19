@@ -8,6 +8,7 @@
     {"id":{"name":"load_model","path":"scripts/load_model/load_model.yy",},"order":1,},
     {"id":{"name":"falcon_end","path":"scripts/falcon_end/falcon_end.yy",},"order":3,},
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},"order":5,},
+    {"id":{"name":"falcon_set_vertex_format","path":"scripts/falcon_set_vertex_format/falcon_set_vertex_format.yy",},"order":6,},
     {"id":{"name":"draw_sprite_billboard","path":"scripts/draw_sprite_billboard/draw_sprite_billboard.yy",},"order":8,},
     {"id":{"name":"falcon_begin","path":"scripts/falcon_begin/falcon_begin.yy",},"order":1,},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},"order":1,},
