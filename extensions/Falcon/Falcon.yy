@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "once": {"copyToTargets":"35184372088896",},
+  },
   "optionsFile": "options.json",
   "options": [],
   "exportToGame": true,
@@ -26,16 +29,20 @@
         {"externalName":"falcon_set_vertex_size","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             2,
           ],"resourceVersion":"1.0","name":"__falcon_set_vertex_size","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"combine_color","kind":1,"help":"","hidden":false,"returnType":1,"argCount":0,"args":[
+        {"externalName":"combine_color","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             1,
             1,
             2,
           ],"resourceVersion":"1.0","name":"__falcon_combine_color","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"falcon_set_color_offset","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"__falcon_set_color_offset","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"__falcon_version","path":"extensions/Falcon/Falcon.yy",},
         {"name":"__falcon_combine","path":"extensions/Falcon/Falcon.yy",},
-        {"name":"__falcon_set_vertex_size","path":"extensions/Falcon/Falcon.yy",},
         {"name":"__falcon_combine_color","path":"extensions/Falcon/Falcon.yy",},
+        {"name":"__falcon_set_vertex_size","path":"extensions/Falcon/Falcon.yy",},
+        {"name":"__falcon_set_color_offset","path":"extensions/Falcon/Falcon.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],
   "classname": "",
