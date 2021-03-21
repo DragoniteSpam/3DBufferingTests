@@ -37,7 +37,9 @@
         {"externalName":"falcon_set_color_offset","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             2,
           ],"resourceVersion":"1.0","name":"__falcon_set_color_offset","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
+      ],"constants":[
+        {"value":"\"1.0.1\"","hidden":false,"resourceVersion":"1.0","name":"FALCON_VERSION","tags":[],"resourceType":"GMExtensionConstant",},
+      ],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"__falcon_version","path":"extensions/Falcon/Falcon.yy",},
         {"name":"__falcon_combine","path":"extensions/Falcon/Falcon.yy",},
         {"name":"__falcon_combine_color","path":"extensions/Falcon/Falcon.yy",},
