@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"spr_grass","path":"sprites/spr_grass/spr_grass.yy",},"order":0,},
+    {"id":{"name":"Falcon","path":"extensions/Falcon/Falcon.yy",},"order":14,},
     {"id":{"name":"falcon_version","path":"scripts/falcon_version/falcon_version.yy",},"order":4,},
     {"id":{"name":"vertex_add_point","path":"scripts/vertex_add_point/vertex_add_point.yy",},"order":0,},
     {"id":{"name":"load_obj","path":"scripts/load_obj/load_obj.yy",},"order":10,},
