@@ -77,8 +77,8 @@
   "iosCocoaPodDependencies": "",
   "tvosCocoaPodDependencies": "",
   "parent": {
-    "name": "3D Buffering Tests",
-    "path": "3D Buffering Tests.yyp",
+    "name": "Falcon",
+    "path": "folders/Falcon.yy",
   },
   "resourceVersion": "1.2",
   "name": "Falcon",
