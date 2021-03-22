@@ -6,7 +6,7 @@ function falcon_end() {
     if (tell_vert > 0) {
         __falcon_combine(buffer_get_address(vert), buffer_get_address(data), tell_data / 16);
         var vb_combine = vertex_create_buffer_from_buffer_ext(vert, global.__falcon_combine_format, 0, tell_vert / 36);
-        vertex_submit(vb_combine, pr_trianglelist, sprite_get_texture(spr_tree, 0));
+        vertex_submit(vb_combine, pr_trianglelist, global.__falcon_texture);
         vertex_delete_buffer(vb_combine);
     }
 }

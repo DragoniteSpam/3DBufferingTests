@@ -1,4 +1,4 @@
-function falcon_add_buffer(source, x, y, z) {
+function falcon_add_buffer(source, x, y, z, tex) {
     var vert = global.__falcon_combine_vertices;
     var data = global.__falcon_combine_data;
     var tell_vert = buffer_tell(vert);
@@ -7,10 +7,11 @@ function falcon_add_buffer(source, x, y, z) {
     var size_data = buffer_get_size(data);
     var size_source = buffer_get_size(source);
     
-    if (tell_vert + size_source > size_vert) {
+    if (tell_vert + size_source > size_vert || tex != global.__falcon_texture) {
         falcon_end();
         falcon_begin();
         tell_vert = 0;
+        global.__falcon_texture = tex;
     }
     
     buffer_write(data, buffer_u32, size_source);

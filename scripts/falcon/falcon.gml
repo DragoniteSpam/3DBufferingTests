@@ -1,6 +1,7 @@
 global.__falcon_combine_vertices = buffer_create(512000, buffer_fast, 1);
 global.__falcon_combine_data = buffer_create(1000 * 3, buffer_grow, 4);
 global.__falcon_combine_format = undefined;
+global.__falcon_texture = -1;
 
 // default vertex format, just in case
 vertex_format_begin();
