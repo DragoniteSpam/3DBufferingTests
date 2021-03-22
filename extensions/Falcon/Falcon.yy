@@ -38,7 +38,7 @@
             2,
           ],"resourceVersion":"1.0","name":"__falcon_set_color_offset","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[
-        {"value":"\"1.0.1\"","hidden":false,"resourceVersion":"1.0","name":"FALCON_VERSION","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"\"1.1.2\"","hidden":false,"resourceVersion":"1.0","name":"FALCON_VERSION","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"__falcon_version","path":"extensions/Falcon/Falcon.yy",},
         {"name":"__falcon_combine","path":"extensions/Falcon/Falcon.yy",},
